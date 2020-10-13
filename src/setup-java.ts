@@ -13,8 +13,8 @@ async function run() {
     }
 
     const arch = core.getInput(constants.INPUT_ARCHITECTURE, {required: true});
-    if (!['x86', 'x64'].includes(arch)) {
-      throw new Error(`architecture "${arch}" is not in [x86 | x64]`);
+    if (!['x86', 'x64', 'aarch64'].includes(arch)) {
+      throw new Error(`architecture "${arch}" is not in [x86 | x64 | aarch64]`);
     }
 
     const javaPackage = core.getInput(constants.INPUT_JAVA_PACKAGE, {
